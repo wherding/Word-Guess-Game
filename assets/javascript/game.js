@@ -14,7 +14,8 @@ var options = [
     stella={name:"stella", img:"./assets/img/stella.png"},
     xx={name:"xx",  img:"./assets/img/xx.jfif"},
     patronShot = {name:"patron shot", img:"./assets/img/patron_shot.jpg"},
-    archer={name:"bloody mary",img:"./assets/img/archer.jpg"}
+    archer={name:"bloody mary",img:"./assets/img/archer.jpg"},
+    jager={name:"jagermeister",img:"./assets/img/jager.webp"}
 ];
 //end object array
 var index;
@@ -77,6 +78,7 @@ document.onkeydown = function(event){
         userGuesses.push(userInput);
         document.getElementById("wrong").innerHTML = userGuesses;
         numberWrong++;
+
 
         
     }
