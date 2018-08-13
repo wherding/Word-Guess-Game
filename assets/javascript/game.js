@@ -4,13 +4,33 @@ var letters = [];
 var spaces= [];
 var userInput;
 var userGuesses = [];
+//begin object array
+var options = [
+     oldFashioned = {
+        name: "old fashioned",
+        img:"./assets/img/mmcask.jpg"
+
+    },
+    marg = { name:'margarita', img:'./assets/img/patron.jpeg' },
+    mint={name:"mint julep", img:"./assets/img/mintJ.jfif"}
+];
+//end object array
+var index;
+
 
 window.onload = function(){
+    console.log(options[0])
+    console.log(options[1].test2)
+
    // document.getElementById("test").innerHTML = words;
-    word = words[Math.floor(Math.random() * words.length)];
-    letters = word.split("");
+   index = Math.floor(Math.random() * options.length);
+   console.log("this is the value of my index var: "+ index);
+
+    //word = words[Math.floor(Math.random() * words.length)];
+    letters = options[index].name.split("");
     document.getElementById("test").innerHTML = letters;
     console.log(word);
+    document.getElementById("hint").src = options[index].img;
   
     letters.forEach(x => {
         spaces.push("_");
@@ -44,7 +64,10 @@ document.onkeydown = function(event){
         
     }
     else{
-        //add wrong letters to guesses array and update hanman image.  
+        //add wrong letters to guesses array and update hanman image.
+        userGuesses.push(userInput);
+        document.getElementById("wrong").innerHTML = userGuesses;
+        
     }
 }
 
