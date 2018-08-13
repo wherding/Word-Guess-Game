@@ -4,21 +4,21 @@ var letters = [];
 var spaces= [];
 var userInput;
 var userGuesses = [];
+var numberWrong = 0;
 //begin object array
 var options = [
-     oldFashioned = {
-        name: "old fashioned",
-        img:"./assets/img/mmcask.jpg"
-
-    },
+    oldFashioned = {  name: "old fashioned",  img:"./assets/img/mmcask.jpg"},
     marg = { name:'margarita', img:'./assets/img/patron.jpeg' },
-    mint={name:"mint julep", img:"./assets/img/mintJ.jfif"}
+    mint={name:"mint julep", img:"./assets/img/mintJ.jpg"},
+    irish={name:"irish trash can", img:"./assets/img/irish.jpg"},
+    stella={name:"stella", img:"./assets/img/stella.png"},
+    xx={name:"xx",  img:"./assets/img/xx.jfif"}
 ];
 //end object array
 var index;
 
 
-window.onload = function(){
+window.onload = function load(){
     console.log(options[0])
     console.log(options[1].test2)
 
@@ -28,7 +28,7 @@ window.onload = function(){
 
     //word = words[Math.floor(Math.random() * words.length)];
     letters = options[index].name.split("");
-    document.getElementById("test").innerHTML = letters;
+   // document.getElementById("test").innerHTML = letters;
     console.log(word);
     document.getElementById("hint").src = options[index].img;
   
@@ -37,8 +37,8 @@ window.onload = function(){
     });
     document.getElementById("test").innerHTML = spaces.join(" ");
 
-    console.log(spaces);
-    console.log(letters);
+    //console.log(spaces);
+    //console.log(letters);
 
 
 }
@@ -54,20 +54,28 @@ document.onkeydown = function(event){
                spaces[i] = userInput;
                
            }
-           i++
+           i++;
+           
+           
        });
-
         //var updateSpace = letters.indexOf(userInput);
        // spaces[updateSpace] = userInput;
         document.getElementById("test").innerHTML = spaces.join(" ");
-        
-        
+       //make this happen after the page updates the word guess line
+        if(spaces.toString() == letters.toString()){
+            alert("you win!");
+            //call reset function 
+        }    
     }
     else{
         //add wrong letters to guesses array and update hanman image.
         userGuesses.push(userInput);
         document.getElementById("wrong").innerHTML = userGuesses;
+
         
     }
+    console.log(spaces);
+    
+    console.log(letters);
 }
 

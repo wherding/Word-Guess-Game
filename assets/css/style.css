@@ -1,4 +1,21 @@
 .hint img{
     height: 500px;
-    
+    float: left;
+}
+
+.man{
+    float: right;
+    width: 500px;
+}
+body{
+    background-color: black;
+    color: chartreuse;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 18px;
+}
+
+h1{
+    border: solid 5px;
+    border-color: chartreuse;
+    text-align: center;
 }
