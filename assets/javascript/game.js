@@ -65,6 +65,7 @@ document.onkeydown = function(event){
         if(spaces.toString() == letters.toString()){
             alert("you win!");
             //call reset function 
+            document.location.reload();
         }    
     }
     else{
