@@ -12,7 +12,9 @@ var options = [
     mint={name:"mint julep", img:"./assets/img/mintJ.jpg"},
     irish={name:"irish trash can", img:"./assets/img/irish.jpg"},
     stella={name:"stella", img:"./assets/img/stella.png"},
-    xx={name:"xx",  img:"./assets/img/xx.jfif"}
+    xx={name:"xx",  img:"./assets/img/xx.jfif"},
+    patronShot = {name:"patron shot", img:"./assets/img/patron_shot.jpg"},
+    archer={name:"bloody mary",img:"./assets/img/archer.jpg"}
 ];
 //end object array
 var index;
@@ -63,6 +65,8 @@ document.onkeydown = function(event){
         document.getElementById("test").innerHTML = spaces.join(" ");
        //make this happen after the page updates the word guess line
         if(spaces.toString() == letters.toString()){
+        
+          // setTimeout(1000);
             alert("you win!");
             //call reset function 
             document.location.reload();
@@ -72,6 +76,7 @@ document.onkeydown = function(event){
         //add wrong letters to guesses array and update hanman image.
         userGuesses.push(userInput);
         document.getElementById("wrong").innerHTML = userGuesses;
+        numberWrong++;
 
         
     }
