@@ -66,11 +66,14 @@ document.onkeydown = function(event){
         document.getElementById("test").innerHTML = spaces.join(" ");
        //make this happen after the page updates the word guess line
         if(spaces.toString() == letters.toString()){
-        
-          // setTimeout(1000);
+        setTimeout(function(){
             alert("you win!");
-            //call reset function 
             document.location.reload();
+        }, 50);
+          // setTimeout(1000);
+            
+            //call reset function 
+           
         }    
     }
     else{
