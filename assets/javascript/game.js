@@ -81,6 +81,11 @@ document.onkeydown = function(event){
         userGuesses.push(userInput);
         document.getElementById("wrong").innerHTML = userGuesses;
         numberWrong++;
+        if(numberWrong==6){
+            alert("you lose!");
+            document.location.reload();
+
+        }
 
 
         
